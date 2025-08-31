@@ -20,20 +20,19 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
 12. Lure Articles:
     
     1. 
-    <img width="1416" height="334" alt="image" src="https://github.com/user-attachments/assets/e9f00ac5-f680-47ad-abb0-53be8957de94" />
-    <img width="1521" height="62" alt="image" src="https://github.com/user-attachments/assets/801eb6b7-5a8a-462e-903a-47a17b71aa36" />
-
+    ![image](images/1.png)
+    ![image](images/2.png)
     2. 
-    <img width="1442" height="495" alt="image" src="https://github.com/user-attachments/assets/3fc1ca14-ef9f-4c67-b8f8-4b51fb1379aa" />
+    ![image](images/3.png)
 
     3.
-    <img width="1339" height="290" alt="image" src="https://github.com/user-attachments/assets/929b5d6b-0597-4f6a-be99-1586bc0b7039" />
+    ![image](images/4.png)
 
     4. 
-    <img width="1480" height="383" alt="image" src="https://github.com/user-attachments/assets/21153b49-a725-4266-9277-468f14e8724e" />
+    ![image](images/5.png)
 
     5.
-    <img width="1220" height="135" alt="image" src="https://github.com/user-attachments/assets/abe1333c-2487-435e-8f78-dbd61c588c40" />
+    ![image](images/6.png)
 
     6.
     <img width="1159" height="305" alt="image" src="https://github.com/user-attachments/assets/0eaca889-8259-4d1e-8ed5-07a1f7b7206d" />
@@ -41,7 +40,7 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
     <img width="1453" height="1233" alt="image" src="https://github.com/user-attachments/assets/f9bc320f-2a8e-4a16-8aa1-4e0582eb4254" />
 
 
-13. Cluster Analysis on MSIL/Crimson Implant (including only `APT36 Operations`):
+14. Cluster Analysis on MSIL/Crimson Implant (including only `APT36 Operations`):
     1. Samples dating back to 2012. Begins with embassy phishing and the fake Indian‐news blog (`intribune[.]blogspot[.]com`). Tools include Crimson plus _Luminosity Link RAT_, _njRAT_, _Bezigate_, _Meterpreter_, and a closely related _Python/Peppy RAT_; _Andromeda_ downloaders also appear.
     2. Infra patterns: Mix of compromised and actor-owned domains (e.g., `sahirlodhi[.]com` and `bbmsync2727[.]com`). Naming tells: “sync” strings, repeated use of “bb/bbm,” and second-level domains ending in 4 digits. Heavy use of Contabo GmbH hosted C2.
     3. Another Email Campaign using "2016 [Pathankot attack](https://en.wikipedia.org/wiki/2016_Pathankot_attack)" Lure ([link](https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf)) (search: "`Email Campaign using "2016 Pathankot attack" Lure`")
@@ -71,7 +70,7 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
     More Cluster Analysis on _MSIL/Crimson_ Implant can be found here:
     https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf (search: "`Cluster 2 — guddyapps / appstertech / sajid`" and "`Cluster 3 — “Nadra attack in Mardan” lures`" and "`Cluster 4 — DDNS & Pakistan`")
 
-14. Technical Analysis:
+15. Technical Analysis:
     - Crimson is modular in the sense that additional payloads downloaded by the main RAT module are often utilized to perform functions such as keylogging and browser credential theft.
     - Crimson infections also typically occur in stages. Crimson’s first stage is a downloader component whose primary purpose is to download a more fully featured RAT, typically being the Crimson RAT component. The RAT component will then send system information to the C&C while the C&C will likely respond with additional module payloads.
     - Crimson utilizes a custom TCP protocol for communicating to C&C. Some of Crimson’s optionally downloaded modules have no C&C capability and instead rely on the RAT component for information exfiltration.

@@ -75,13 +75,12 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
     - Crimson is modular in the sense that additional payloads downloaded by the main RAT module are often utilized to perform functions such as keylogging and browser credential theft.
     - Crimson infections also typically occur in stages. Crimson’s first stage is a downloader component whose primary purpose is to download a more fully featured RAT, typically being the Crimson RAT component. The RAT component will then send system information to the C&C while the C&C will likely respond with additional module payloads.
     - Crimson utilizes a custom TCP protocol for communicating to C&C. Some of Crimson’s optionally downloaded modules have no C&C capability and instead rely on the RAT component for information exfiltration.
-    - <img width="1186" height="117" alt="image" src="https://github.com/user-attachments/assets/c2a619cc-d467-4945-8531-b18a9eebb939" />
     - ![image](images/18.png)
     - Some Crimson RAT variants support at least 40 individual commands, while all the individual commands throughout the different versions of the RAT we researched are listed.
 
 | Table 1 | Table 2 |
 | ------- | ------- |
-| <img width="1030" height="1323" alt="image" src="https://github.com/user-attachments/assets/12a983fc-7db1-4172-84df-ba3823ccd50b" /> ![image](images/19.png) | <img width="1025" height="1051" alt="image" src="https://github.com/user-attachments/assets/c67f52a9-1065-467f-afd6-df920c404be1" /> ![image](images/20.png) | 
+| ![image](images/19.png) | ![image](images/20.png) | 
 
 15. **MSIL/Crimson Module Analysis**:
     - These modules include :
@@ -102,6 +101,7 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
 
 1. Main Panel:
 <img width="1149" height="278" alt="image" src="https://github.com/user-attachments/assets/4a91745f-77f7-42ec-8be9-2c45887623ee" />
+
 ![image](images/21.png)
 
 Geolocation information is retrieved from a legitimate website using a remote IP address as the input. The URL used by the server is: `http://ip-api.com/xml/<ip>`
@@ -109,6 +109,7 @@ Geolocation information is retrieved from a legitimate website using a remote IP
 The server uses an embedded configuration specified inside a class named “settings”.
 
 <img width="330" height="289" alt="image" src="https://github.com/user-attachments/assets/0777b933-728b-449a-ad26-6ba395517697" />
+
 ![image](images/22.png)
 
 2. Bot panel:

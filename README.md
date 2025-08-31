@@ -203,7 +203,32 @@ The main features are accessible from the “bot panel”, an interface with twe
 - <img width="1056" height="491" alt="image" src="https://github.com/user-attachments/assets/ee505f9e-d19f-4495-bff8-0eacfdd6b32b" />
 - This version does not include the check that prevents installation of certain components on systems protected with Kaspersky products, and the Command execution tab is missing. At the same position, we find a different tab, used for saving comments about the infected machine.
 - <img width="660" height="195" alt="image" src="https://github.com/user-attachments/assets/580bcc15-d7d0-4eb2-a424-6c807d4d73de" />
-- 
+
+
+## APT Attributes about APT36 related to Sindoor Dropper: New Phishing Campaign
+
+1. Nextron's analysis uncovered a phishing campaign targeting organizations in India, leveraging spear-phishing techniques reminiscent of Operation Sindoor.
+2. It is a Linux-focused infection method that relies on weaponized **.desktop** files.
+3. This technique has been linked to APT36 (aka Transparent Tribe, Mythic Leopard, G0134) in the past, suggesting the same group may be behind the campaign while also adapting its methods.
+4. When opened, these `.desktop` files trigger a heavily obfuscated execution chain built to evade both static and dynamic detection. The chain ultimately delivers a [MeshAgent](https://github.com/Ylianst/MeshAgent) payload, which gives the attacker full remote access to the system. This access includes the ability to monitor activity, move laterally, and potentially exfiltrate data.
+5. By combining localized spear-phishing lures with advanced obfuscation techniques, the adversaries increase their chances of bypassing defenses and gaining footholds in sensitive networks.
+6. The malicious `.desktop` file is crafted to appear harmless by masquerading as a legitimate document. On the victim’s desktop, it displays an icon resembling a PDF file (image below), luring the user into executing it.
+    - <img width="246" height="203" alt="image" src="https://github.com/user-attachments/assets/4b4860e6-a930-4abd-b766-b995d157aa81" />
+    - Upon launch, the file opens a benign-looking decoy PDF (image below) to reinforce the illusion of legitimacy.
+7. While the user is focused on the opened document, a background process silently runs the obfuscated routines that initiate the deployment chain, ultimately installing the MeshAgent payload. This approach blends social engineering with stealth, hiding malicious activity behind what appears to be a harmless file.
+    - <img width="1280" height="821" alt="image" src="https://github.com/user-attachments/assets/328a5393-0a58-4d85-b08b-ff96d00fde20" />
+8. By using a `.desktop` file, the attacker can place executable files on the victim’s system without needing elevated privileges (chmod).
+9. Infection Chain Overview:
+    - The following schema outlines the infection process from the initial .desktop file launch to the final MeshAgent deployment.
+       - <img width="1283" height="1060" alt="image" src="https://github.com/user-attachments/assets/46d4c094-4876-4ed7-aa70-447e298e6529" />
+10. Process Analysis:
+    - The original desktop file downloads the `decoy document`, a `corrupted decryptor`, and an `encrypted downloader`.
+        - <img width="2146" height="233" alt="image" src="https://github.com/user-attachments/assets/8098dcfe-a5fd-4b9d-8e6e-b4aee3a87146" />
+    - 
+
+
+
+
 
 
 

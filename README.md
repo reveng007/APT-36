@@ -370,10 +370,8 @@ Singapore
 ```
 
 
-
-
-
-
+## 4. Advisory: Pahalgam Attack themed decoys used by APT36 to target the Indian Government ([link - Seqrite Labs](https://www.seqrite.com/blog/advisory-pahalgam-attack-themed-decoys-used-by-apt36-to-target-the-indian-government/))
+- More Information on PowerPoint PPAM dropper can be found here: https://www.seqrite.com/blog/advisory-pahalgam-attack-themed-decoys-used-by-apt36-to-target-the-indian-government/
 
 
 

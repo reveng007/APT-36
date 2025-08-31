@@ -1,6 +1,6 @@
 # APT-36
 
-## 1. APT Attributes about APT36
+## 1. APT Attributes about APT36 ([link - proofpoint](https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf))
 
 1. APT 36 ( aka: APT 36, APT36, C-Major, COPPER FIELDSTONE, Earth Karkaddan, Green Havildar, Mythic Leopard, ProjectM, Storm-0156, TMP.Lapis, Transparent Tribe )
 2. Group targeting Indian Army or related assets in India, as well as activists and civil society in Pakistan. Attribution to a Pakistani connection has been made by TrendMicro and others.
@@ -287,7 +287,7 @@ The main features are accessible from the “bot panel”, an interface with twe
 -----------------------------------------------------------------------------------------------
 
 
-## 3. APT Attributes about APT36 related to Operation Sindoor – Anatomy of a Digital Siege : Windows Target ((link - quickheal)[https://www.quickheal.co.in/knowledge-centre/operation-sindoor-anatomy-of-a-digital-siege/])
+## 3. APT Attributes about APT36 related to Operation Sindoor – Anatomy of a Digital Siege : Windows Target ([link - quickheal](https://www.quickheal.co.in/knowledge-centre/operation-sindoor-anatomy-of-a-digital-siege/))
 
 1. Seqrite Labs has identified multiple cyber events linked to Operation Sindoor, involving state-sponsored APT activity and coordinated hacktivist operations.
 2. Observed tactics included :
@@ -304,8 +304,70 @@ The main features are accessible from the “bot panel”, an interface with twe
     - `Pahalgam_Incident_Timeline.pptx.lnk`
     They were precision-guided attacks—documents with _macros_, _shortcuts_, and _scripts_ that triggered covert command-and-control (C2) communications and malware deployments. \
     Each lure played on public fear and national tragedy, weaponizing recent headlines like the Pahalgam Terror Attack. 
-7. 
+7. Following the initiation of Operation Sindoor on May 7th, a surge in hacktivist activities was observed, including coordinated defacements, data leaks, and disruptive cyber campaigns.
+    - <img width="1032" height="263" alt="image" src="https://github.com/user-attachments/assets/d010107c-e47e-4a0c-a358-e4b48107bfca" />
+8. APT36: Evolution:
+    1. APT36 group, known for phishing and the _Crimson RAT_, has upgraded its tooling. They’ve dropped their older “Poseidon” loaders and now lead with Ares, a more modular and stealthy malware framework, as the primary entry tool (“spearhead”) for their attacks.
+    2. Tools & File Types:
+        - .ppam, .xlam, .lnk, .xlsb, .msi
+        - Macros triggering web queries: `fogomyart[.]com/random.php`
+        - Payload delivery through spoofed Indian entities: `zohidsindia[.]com`, `nationaldefensecollege[.]com`, `nationaldefencebackup[.]xyz`
+        - Callback C2 IP : `86.97[.]58:17854`
+    3. Initial access was via spear phishing attachments (`T1566.001`) using malicious file types (.ppam, .xlam, .lnk, .xlsb, .msi). \
+       These triggered macros executed web queries (`T1059.005`) to domains like `fogomyart[.]com`.
+       Payloads were delivered through spoofed Indian domains such as `zohidsindia[.]com` and `nationaldefensecollege[.]com`, with C2 communication via application layer protocols (`T1071.001`) to `167.86.97[.]58:17854`.
+       For execution and persistence, APT36 leveraged LOLBins (`T1218`), scheduled tasks (`T1053.005`), UAC bypasses (`T1548.002`), and obfuscated PowerShell scripts (`T1059.001`, `T1027`), enabling prolonged access while evading detection.
+    4. Ares RAT grants full control over the compromised host offering capabilities such as :
+       - `keylogging`
+       - `screen capturing`
+       - `file manipulation`
+       - `credential theft`
+       - and `remote command execution—similar to commercial RATs` but tailored for stealth and evasion.
+      
+9. Digital Infrastructure: Domains of Deception:
+    - The operation’s domain arsenal resembled a covert intelligence operation:
+        - `pahalgamattack[.]com`
+        - `operationsindoor2025[.]in`
+        - `sindoor[.]website`
+        - `sindoor[.]live`
+    - These domains mimicked military and government entities, exploiting user trust and leveraging geo-political narratives for social engineering.
 
+10. Hacktivist Operations carried out in coordination with something else—another group or a parallel effort (e.g., propaganda, protests, or state ops)—timed to run together to amplify impact.
+    - In parallel, hacktivist collectives coordinated disruptive attacks — **DDoS**, **defacements**, and **data leaks** — across key Indian sectors. Telegram groups synchronized actions under hashtags like `#OpIndia`, `#OperationSindoor`, and `#PahalgamAttack`.
+    - <img width="1010" height="1012" alt="image" src="https://github.com/user-attachments/assets/630cc807-7fb4-4212-bb97-84f93891ab1e" />
+    - <img width="1611" height="1131" alt="image" src="https://github.com/user-attachments/assets/2e52c8ef-f6a4-4807-ab6f-f861f2bab936" />
+
+11. Most Targeted Sectors:
+    - <img width="1110" height="963" alt="image" src="https://github.com/user-attachments/assets/e2eb4407-3cb2-48e5-9c29-9b002c638005" />
+
+12. IOCs: Indicators of Compromise:
+```
+Malicious Domains:
+
+pahalgamattack[.]com
+sindoor[.]live
+operationsindoor2025[.]in
+nationaldefensecollege[.]com
+fogomyart[.]com/random.php
+
+Malicious Files:
+
+xlam
+ppam
+pptx.lnk
+pdf
+
+Callback IP:
+
+86.97[.]58:17854 (Crimson RAT C2)
+
+VPS Traffic Origination:
+
+Russia
+Germany
+Indonesia
+Singapore
+```
 
 
 
@@ -321,7 +383,8 @@ Resources:
 3. https://securelist.com/transparent-tribe-part-1/98127/
 4. https://github.com/BRANDEFENSE/IoC/blob/main/IoC-YARA-rules-apt36.txt
 5. https://www.nextron-systems.com/2025/08/29/sindoor-dropper-new-phishing-campaign/
-6. 
+6. https://github.com/reveng007/APT-36/edit/main/README.md
+7. 
 
 Other Resources:
 1. https://securelist.com/transparent-tribe-part-2/98233/

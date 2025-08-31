@@ -35,9 +35,9 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
     ![image](images/6.png)
 
     6.
-    <img width="1159" height="305" alt="image" src="https://github.com/user-attachments/assets/0eaca889-8259-4d1e-8ed5-07a1f7b7206d" />
-    <img width="1431" height="107" alt="image" src="https://github.com/user-attachments/assets/d71bc917-8381-43cb-b81b-14ade774e24e" />
-    <img width="1453" height="1233" alt="image" src="https://github.com/user-attachments/assets/f9bc320f-2a8e-4a16-8aa1-4e0582eb4254" />
+    ![image](images/7.png)
+    ![image](images/8.png)
+    ![image](images/9.png)
 
 
 14. Cluster Analysis on MSIL/Crimson Implant (including only `APT36 Operations`):

@@ -100,15 +100,12 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
 ### Crimson Server version “A”:
 
 1. Main Panel:
-<img width="1149" height="278" alt="image" src="https://github.com/user-attachments/assets/4a91745f-77f7-42ec-8be9-2c45887623ee" />
 
 ![image](images/21.png)
 
 Geolocation information is retrieved from a legitimate website using a remote IP address as the input. The URL used by the server is: `http://ip-api.com/xml/<ip>`
 
 The server uses an embedded configuration specified inside a class named “settings”.
-
-<img width="330" height="289" alt="image" src="https://github.com/user-attachments/assets/0777b933-728b-449a-ad26-6ba395517697" />
 
 ![image](images/22.png)
 
@@ -117,7 +114,6 @@ The main features are accessible from the “bot panel”, an interface with twe
 
 - Update module:
   - The first tab is used for checking the client configuration, uploading Crimson components and executing these on remote system.
-  - <img width="1063" height="486" alt="image" src="https://github.com/user-attachments/assets/e1e12211-5cf6-41f2-872c-2f8add2bc35f" />
   - ![image](images/23.png)
   - The Crimson framework is composed of seven client components:
     - **Thin Client**: It is usually dropped during the infection process by which Transparent Tribe is distributed.
@@ -141,14 +137,18 @@ The main features are accessible from the “bot panel”, an interface with twe
         - The documents typically have malicious VBA code embedded, and sometimes protected with a password, configured to drop an encoded ZIP file which contains a malicious payload.
         - Decoy document used in an attack against Indian entities:
             - <img width="738" height="426" alt="image" src="https://github.com/user-attachments/assets/f3afbdff-9b21-4a8a-ba3d-97816be9170a" />
+            - ![image](images/24.png)
         - User form with encoded payloads:
             - <img width="630" height="467" alt="image" src="https://github.com/user-attachments/assets/fd1da111-e31a-4d64-8494-e226c885f11f" />
+            - ![image](images/25.png)
         - The macro drops the ZIP file into a new directory created under %ALLUSERPROFILE% and extracts the archive contents at the same location. The directory name can be different, depending on the sample:
             - `%ALLUSERSPROFILE%\Media-List\tbvrarthsa.zip`
             - `%ALLUSERSPROFILE%\Media-List\tbvrarthsa.exe`
             - <img width="878" height="468" alt="image" src="https://github.com/user-attachments/assets/1f106f1f-553f-4602-807d-55743d945460" />
+            - ![image](images/26.png)
         - During the analysis of by securelist: they found one of the file path name combinations observed was `‘C:\ProgramData\Dacr\macrse.exe’`, also configured in a Crimson “Main Client” sample and used for saving the payload received from the C2 when invoking the usbwrm command.
         - <img width="1274" height="665" alt="image" src="https://github.com/user-attachments/assets/c2bba99f-ba40-459a-81d3-6c681867ddb7" />
+        - ![image](images/27.png)
         - **USB Worm description**:
         1. Usually, the component is installed by the Crimson “Main Client”, and when started, it checks if its execution path is the one specified in the embedded configuration and if the system is already infected with a Crimson client component (Probably used Mutex of some kind to check this: what reveng007 think!).
         2. If these conditions are met, it will start to monitor removable media, and for each of these, the malware will try to infect the device and steal files of interest.
@@ -156,12 +156,15 @@ The main features are accessible from the “bot panel”, an interface with twe
         4. Moreover, **USBWorm** uses an icon that mimics a Windows directory, tricking the user into executing the malware when trying to access a directory.
         5. USBWorm icon:
             - <img width="96" height="113" alt="image" src="https://github.com/user-attachments/assets/0640f5bf-a50e-44e1-a032-7f470e899eb9" />
+            - ![image](images/28.png)
         6. This simple trick works very well on default Microsoft Windows installations, where file extensions are hidden and hidden files are not visible.
         7. The victim will execute the worm every time he tries to access a directory. Moreover, the malware does not delete the real directories and executes “explorer.exe” when started, providing the hidden directory path as argument. The command will open the Explorer window as expected by the user.
         8. View of infected removable media with default Windows settings:
             - <img width="168" height="168" alt="image" src="https://github.com/user-attachments/assets/491933f5-2bde-4c83-9785-6ef03887c07b" />
+            - ![image](images/29.png)
         9. View of infected removable media with visible hidden files and file extensions:
             - <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/89ef444f-7fee-403c-bef3-54a5ced8041b" />
+            - ![image](images/30.png)
         10. The data theft procedure lists all files stored on the device and copies those with an extension matching a predefined list:
             - File extensions of interest: .pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .pps, .ppsx, .txt
             - If the file is of interest, i.e. if the file extension is on the predefined list, the procedure checks if a file with the same name already has been stolen. The malware has a text file with a list of stolen files, which is stored in the malware directory under a name specified in the embedded configuration.

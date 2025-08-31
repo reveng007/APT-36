@@ -1,6 +1,6 @@
 # APT-36
 
-## APT Attributes about APT36
+## 1. APT Attributes about APT36
 
 1. APT 36 ( aka: APT 36, APT36, C-Major, COPPER FIELDSTONE, Earth Karkaddan, Green Havildar, Mythic Leopard, ProjectM, Storm-0156, TMP.Lapis, Transparent Tribe )
 2. Group targeting Indian Army or related assets in India, as well as activists and civil society in Pakistan. Attribution to a Pakistani connection has been made by TrendMicro and others.
@@ -205,7 +205,10 @@ The main features are accessible from the “bot panel”, an interface with twe
 - <img width="660" height="195" alt="image" src="https://github.com/user-attachments/assets/580bcc15-d7d0-4eb2-a424-6c807d4d73de" />
 
 
-## APT Attributes about APT36 related to Sindoor Dropper: New Phishing Campaign ([link - nextron](https://www.nextron-systems.com/2025/08/29/sindoor-dropper-new-phishing-campaign/))
+------------------------------------------------------------------------------------------------------------------
+
+
+## 2. APT Attributes about APT36 related to Sindoor Dropper: New Phishing Campaign : Linux Target ([link - nextron](https://www.nextron-systems.com/2025/08/29/sindoor-dropper-new-phishing-campaign/))
 
 1. Nextron's analysis uncovered a phishing campaign targeting organizations in India, leveraging spear-phishing techniques reminiscent of Operation Sindoor.
 2. It is a Linux-focused infection method that relies on weaponized **.desktop** files.
@@ -279,11 +282,29 @@ The main features are accessible from the “bot panel”, an interface with twe
     - From `validin.com`, these subdomains were all registered on _2025-08-15_, suggesting a coordinated setup of the infrastructure immediately prior to the campaign’s activity.
     - This connection allows the attacker to issue _commands_, _transfer files_, and _maintain persistence_ on the infected host.
     - The use of a legitimate tool like `MeshAgent` complicates detection and response, as its functionality overlaps with legitimate remote administration.
-   
 
 
+-----------------------------------------------------------------------------------------------
 
 
+## 3. APT Attributes about APT36 related to Operation Sindoor – Anatomy of a Digital Siege : Windows Target ((link - quickheal)[https://www.quickheal.co.in/knowledge-centre/operation-sindoor-anatomy-of-a-digital-siege/])
+
+1. Seqrite Labs has identified multiple cyber events linked to Operation Sindoor, involving state-sponsored APT activity and coordinated hacktivist operations.
+2. Observed tactics included :
+    - spear phishing,
+    - deployment of malicious scripts,
+    - website defacements,
+    - and unauthorized data leaks.
+3. The campaign exhibited a combination of cyber espionage tactics, hacktivist-driven disruptions, and elements of hybrid warfare.
+4. It targeted high-value Indian sectors, including defense, government IT infrastructure, healthcare, telecom, and education.
+5. Some of the activities were attributed to APT36 and Sidecopy, Pakistan-aligned threat groups known for leveraging spoofed domains, malware payloads, and credential harvesting techniques against Indian military and government entities.
+6. On April 17, 2025: Anomalies directed towards government mail servers and defence infrastructures. Lure files carried names that mimicked urgency and legitimacy:
+    - `Final_List_of_OGWs.xlam`
+    - `Preventive_Measures_Sindoor.ppam`
+    - `Pahalgam_Incident_Timeline.pptx.lnk`
+    They were precision-guided attacks—documents with _macros_, _shortcuts_, and _scripts_ that triggered covert command-and-control (C2) communications and malware deployments. \
+    Each lure played on public fear and national tragedy, weaponizing recent headlines like the Pahalgam Terror Attack. 
+7. 
 
 
 

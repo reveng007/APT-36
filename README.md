@@ -199,13 +199,10 @@ The main features are accessible from the “bot panel”, an interface with twe
 ### Crimson Server version “B”:
 
 - The other version is quite similar to the previous one. Most noticeably, in this “B” version, the graphical user interface is different.
-- <img width="625" height="66" alt="image" src="https://github.com/user-attachments/assets/20fb5331-576c-49f6-88a9-62d8836c559a" />
 - ![image](images/37.png)
 - “Update USB Worm” is missing from the Update Bot tab, which means that the USB Worm feature is not available in these versions.
-- <img width="1056" height="491" alt="image" src="https://github.com/user-attachments/assets/ee505f9e-d19f-4495-bff8-0eacfdd6b32b" />
 - ![image](images/38.png)
 - This version does not include the check that prevents installation of certain components on systems protected with Kaspersky products, and the Command execution tab is missing. At the same position, we find a different tab, used for saving comments about the infected machine.
-- <img width="660" height="195" alt="image" src="https://github.com/user-attachments/assets/580bcc15-d7d0-4eb2-a424-6c807d4d73de" />
 - ![image](images/39.png)
 
 

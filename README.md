@@ -307,6 +307,7 @@ The main features are accessible from the “bot panel”, an interface with twe
     Each lure played on public fear and national tragedy, weaponizing recent headlines like the Pahalgam Terror Attack. 
 7. Following the initiation of Operation Sindoor on May 7th, a surge in hacktivist activities was observed, including coordinated defacements, data leaks, and disruptive cyber campaigns.
     - <img width="1032" height="263" alt="image" src="https://github.com/user-attachments/assets/d010107c-e47e-4a0c-a358-e4b48107bfca" />
+    - ![image](images/46.png)
 8. APT36: Evolution:
     1. APT36 group, known for phishing and the _Crimson RAT_, has upgraded its tooling. They’ve dropped their older “Poseidon” loaders and now lead with Ares, a more modular and stealthy malware framework, as the primary entry tool (“spearhead”) for their attacks.
     2. Tools & File Types:
@@ -336,10 +337,13 @@ The main features are accessible from the “bot panel”, an interface with twe
 10. Hacktivist Operations carried out in coordination with something else—another group or a parallel effort (e.g., propaganda, protests, or state ops)—timed to run together to amplify impact.
     - In parallel, hacktivist collectives coordinated disruptive attacks — **DDoS**, **defacements**, and **data leaks** — across key Indian sectors. Telegram groups synchronized actions under hashtags like `#OpIndia`, `#OperationSindoor`, and `#PahalgamAttack`.
     - <img width="1010" height="1012" alt="image" src="https://github.com/user-attachments/assets/630cc807-7fb4-4212-bb97-84f93891ab1e" />
+    - ![image](images/47.png)
     - <img width="1611" height="1131" alt="image" src="https://github.com/user-attachments/assets/2e52c8ef-f6a4-4807-ab6f-f861f2bab936" />
+    - ![image](images/48.png)
 
 11. Most Targeted Sectors:
     - <img width="1110" height="963" alt="image" src="https://github.com/user-attachments/assets/e2eb4407-3cb2-48e5-9c29-9b002c638005" />
+    - ![image](images/49.png)
 
 12. IOCs: Indicators of Compromise:
 ```

@@ -136,18 +136,14 @@ The main features are accessible from the “bot panel”, an interface with twe
         - On January 2020, there was an Ongoing Campaign launched by Transparent Tribe to distribute the Crimson malware. The attacks started with malicious Microsoft Office documents, which were sent to victims using spear-phishing emails ([link](https://securelist.com/transparent-tribe-part-1/98127/)).
         - The documents typically have malicious VBA code embedded, and sometimes protected with a password, configured to drop an encoded ZIP file which contains a malicious payload.
         - Decoy document used in an attack against Indian entities:
-            - <img width="738" height="426" alt="image" src="https://github.com/user-attachments/assets/f3afbdff-9b21-4a8a-ba3d-97816be9170a" />
             - ![image](images/24.png)
         - User form with encoded payloads:
-            - <img width="630" height="467" alt="image" src="https://github.com/user-attachments/assets/fd1da111-e31a-4d64-8494-e226c885f11f" />
             - ![image](images/25.png)
         - The macro drops the ZIP file into a new directory created under %ALLUSERPROFILE% and extracts the archive contents at the same location. The directory name can be different, depending on the sample:
             - `%ALLUSERSPROFILE%\Media-List\tbvrarthsa.zip`
             - `%ALLUSERSPROFILE%\Media-List\tbvrarthsa.exe`
-            - <img width="878" height="468" alt="image" src="https://github.com/user-attachments/assets/1f106f1f-553f-4602-807d-55743d945460" />
             - ![image](images/26.png)
         - During the analysis of by securelist: they found one of the file path name combinations observed was `‘C:\ProgramData\Dacr\macrse.exe’`, also configured in a Crimson “Main Client” sample and used for saving the payload received from the C2 when invoking the usbwrm command.
-        - <img width="1274" height="665" alt="image" src="https://github.com/user-attachments/assets/c2bba99f-ba40-459a-81d3-6c681867ddb7" />
         - ![image](images/27.png)
         - **USB Worm description**:
         1. Usually, the component is installed by the Crimson “Main Client”, and when started, it checks if its execution path is the one specified in the embedded configuration and if the system is already infected with a Crimson client component (Probably used Mutex of some kind to check this: what reveng007 think!).
@@ -155,15 +151,12 @@ The main features are accessible from the “bot panel”, an interface with twe
         3. The infection procedure lists all directories. Then, for each directory, it creates a copy of itself in the drive root directory using the same directory name and changing the directory attribute to “hidden”. This results in all the actual directories being hidden and replaced with a copy of the malware using the same directory name.
         4. Moreover, **USBWorm** uses an icon that mimics a Windows directory, tricking the user into executing the malware when trying to access a directory.
         5. USBWorm icon:
-            - <img width="96" height="113" alt="image" src="https://github.com/user-attachments/assets/0640f5bf-a50e-44e1-a032-7f470e899eb9" />
             - ![image](images/28.png)
         6. This simple trick works very well on default Microsoft Windows installations, where file extensions are hidden and hidden files are not visible.
         7. The victim will execute the worm every time he tries to access a directory. Moreover, the malware does not delete the real directories and executes “explorer.exe” when started, providing the hidden directory path as argument. The command will open the Explorer window as expected by the user.
         8. View of infected removable media with default Windows settings:
-            - <img width="168" height="168" alt="image" src="https://github.com/user-attachments/assets/491933f5-2bde-4c83-9785-6ef03887c07b" />
             - ![image](images/29.png)
         9. View of infected removable media with visible hidden files and file extensions:
-            - <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/89ef444f-7fee-403c-bef3-54a5ced8041b" />
             - ![image](images/30.png)
         10. The data theft procedure lists all files stored on the device and copies those with an extension matching a predefined list:
             - File extensions of interest: .pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .pps, .ppsx, .txt
@@ -174,6 +167,7 @@ The main features are accessible from the “bot panel”, an interface with twe
             - In this case, it will check if the “Thin Client” or the “Main Client” is running on the system. If the system is not infected, it will connect to a remote Crimson Server and try to use a specific “USBW” command to download and execute the “Thin Client” component.
             - Snippet of code used to build USBW request:
                 - <img width="442" height="232" alt="image" src="https://github.com/user-attachments/assets/45345e6f-61b8-481f-af56-586b1dc0bc13" />
+                - ![image](images/31.png)
         12. **Persistence**: \
           1. It checks if the malware directory exists as specified in an embedded configuration and then copies the malware executable inside it. \
           2. It also creates a registry key under “`HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`” to execute the worm automatically. 
@@ -186,15 +180,20 @@ The main features are accessible from the “bot panel”, an interface with twe
     - **Remover**: Not much information regarding this.
         - Transparent Tribe tries to circumvent certain vendors’ security tools by configuring the Server to prevent installation of some of the malware components, specifically the “USB Driver” and the “Pass Logger”, on systems protected with ***Kaspersky products*** and prevent installation of the “Pass Logger” on systems protected by ***ESET***.
         - <img width="883" height="214" alt="image" src="https://github.com/user-attachments/assets/d83f75aa-102f-4ece-9664-2fec86a03dc7" />
+        - ![image](images/32.png)
     - **File Manager & Auto Download tabs**: The file manager allows the attacker to explore the remote file system, execute programs, download, upload and delete files.
         - <img width="811" height="243" alt="image" src="https://github.com/user-attachments/assets/6f89ea7d-2a58-4d9b-b0f8-420b8bec2072" />
+        - ![image](images/33.png)
         - The most interesting ones are “USB Drive” and “Delete USB”, used for accessing data stolen by the USB Driver and USB Worm components and the “Auto File Download” feature. This feature opens another window, which can also be accessed via the second last tab. It allows the attacker to configure the bot to search files, filter results and upload multiple files.
         - <img width="392" height="417" alt="image" src="https://github.com/user-attachments/assets/e5522bce-cb96-4676-ba42-f29e4d18e89d" />
+        - ![image](images/34.png)
     - **Screen and Webcam monitoring tabs**:
         - Screen monitoring tab: \
             <img width="319" height="95" alt="image" src="https://github.com/user-attachments/assets/460f65e1-3ecf-423b-bb71-84a8acc92896" />
+            ![image](images/35.png)
         - Webcam monitoring tab: \
             <img width="354" height="99" alt="image" src="https://github.com/user-attachments/assets/05b5a38b-32a1-4ed5-82b6-356fecc0378f" />
+            ![image](images/36.png)
         - The other tabs are used for managing the following features:
             - Audio surveillance: The malware uses the NAudio library to interact with the microphone and manage the audio stream. The library is stored server-side and pushed to the victim’s machine using a special command.
             - Send message: The attacker can send messages to victims. The bot will display the messages using a standard message box.
@@ -207,10 +206,13 @@ The main features are accessible from the “bot panel”, an interface with twe
 
 - The other version is quite similar to the previous one. Most noticeably, in this “B” version, the graphical user interface is different.
 - <img width="625" height="66" alt="image" src="https://github.com/user-attachments/assets/20fb5331-576c-49f6-88a9-62d8836c559a" />
+- ![image](images/36.png)
 - “Update USB Worm” is missing from the Update Bot tab, which means that the USB Worm feature is not available in these versions.
 - <img width="1056" height="491" alt="image" src="https://github.com/user-attachments/assets/ee505f9e-d19f-4495-bff8-0eacfdd6b32b" />
+- ![image](images/37.png)
 - This version does not include the check that prevents installation of certain components on systems protected with Kaspersky products, and the Command execution tab is missing. At the same position, we find a different tab, used for saving comments about the infected machine.
 - <img width="660" height="195" alt="image" src="https://github.com/user-attachments/assets/580bcc15-d7d0-4eb2-a424-6c807d4d73de" />
+- ![image](images/38.png)
 
 
 ------------------------------------------------------------------------------------------------------------------

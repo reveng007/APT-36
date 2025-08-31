@@ -57,16 +57,16 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
       - email.attachment[.]biz (no links discovered) \
     All of the domains resolve to the same IP, 91.194.91[.]203 (Contabo GmbH). So far three separate campaigns was detected.
 
-        <img width="1267" height="455" alt="image" src="https://github.com/user-attachments/assets/510d5ef8-dad4-4592-9669-c529dc118352" />
+        ![image](images/15.png)
 
     2. **AFOWOBLOG.IN Domain**
        - The domain was registered on or near February 24th, 2016 using the email address `thefriendsmedia@gmail.com`, which is also close to the same day that the “AFOWO Broucher 2016.xls” attachment was uploaded to VT.
        - We have detected potentially connected activity as far back as June 2013 using the domain `thefriendsmedia[.]com`, where it was used as an Andromeda C&C.
        - _Andromeda payload_ communicate with `brooksidebiblefellowship[.]org` to retrieve an _additional Andromeda payload_ from `lolxone[.]com` that then used `thefriendsmedia[.]com` as its C&C.
        - The original _Andromeda_ also retrieved a _Bezigate payload_.
-         <img width="1388" height="1188" alt="image" src="https://github.com/user-attachments/assets/22c10861-36fb-49b8-83bd-d831ad9fa1a2" />
+         ![image](images/16.png)
        - It was observed `lolxone[.]com` hosting additional _Bezigate payloads_ as well as the _Python/Peppy malware_.
-         <img width="1318" height="698" alt="image" src="https://github.com/user-attachments/assets/426c6d45-cb02-4d03-8082-99009cd129ce" />
+         ![image](images/17.png)
          
     More Cluster Analysis on _MSIL/Crimson_ Implant can be found here:
     https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf (search: "`Cluster 2 — guddyapps / appstertech / sajid`" and "`Cluster 3 — “Nadra attack in Mardan” lures`" and "`Cluster 4 — DDNS & Pakistan`")
@@ -76,11 +76,12 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
     - Crimson infections also typically occur in stages. Crimson’s first stage is a downloader component whose primary purpose is to download a more fully featured RAT, typically being the Crimson RAT component. The RAT component will then send system information to the C&C while the C&C will likely respond with additional module payloads.
     - Crimson utilizes a custom TCP protocol for communicating to C&C. Some of Crimson’s optionally downloaded modules have no C&C capability and instead rely on the RAT component for information exfiltration.
     - <img width="1186" height="117" alt="image" src="https://github.com/user-attachments/assets/c2a619cc-d467-4945-8531-b18a9eebb939" />
+    - ![image](images/18.png)
     - Some Crimson RAT variants support at least 40 individual commands, while all the individual commands throughout the different versions of the RAT we researched are listed.
 
 | Table 1 | Table 2 |
 | ------- | ------- |
-| <img width="1030" height="1323" alt="image" src="https://github.com/user-attachments/assets/12a983fc-7db1-4172-84df-ba3823ccd50b" /> | <img width="1025" height="1051" alt="image" src="https://github.com/user-attachments/assets/c67f52a9-1065-467f-afd6-df920c404be1" /> | 
+| <img width="1030" height="1323" alt="image" src="https://github.com/user-attachments/assets/12a983fc-7db1-4172-84df-ba3823ccd50b" /> ![image](images/19.png) | <img width="1025" height="1051" alt="image" src="https://github.com/user-attachments/assets/c67f52a9-1065-467f-afd6-df920c404be1" /> ![image](images/20.png) | 
 
 15. **MSIL/Crimson Module Analysis**:
     - These modules include :
@@ -101,12 +102,14 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
 
 1. Main Panel:
 <img width="1149" height="278" alt="image" src="https://github.com/user-attachments/assets/4a91745f-77f7-42ec-8be9-2c45887623ee" />
+![image](images/21.png)
 
 Geolocation information is retrieved from a legitimate website using a remote IP address as the input. The URL used by the server is: `http://ip-api.com/xml/<ip>`
 
 The server uses an embedded configuration specified inside a class named “settings”.
 
 <img width="330" height="289" alt="image" src="https://github.com/user-attachments/assets/0777b933-728b-449a-ad26-6ba395517697" />
+![image](images/22.png)
 
 2. Bot panel:
 The main features are accessible from the “bot panel”, an interface with twelve tabs, which can be used to manage a remote system and collect information.
@@ -114,6 +117,7 @@ The main features are accessible from the “bot panel”, an interface with twe
 - Update module:
   - The first tab is used for checking the client configuration, uploading Crimson components and executing these on remote system.
   - <img width="1063" height="486" alt="image" src="https://github.com/user-attachments/assets/e1e12211-5cf6-41f2-872c-2f8add2bc35f" />
+  - ![image](images/23.png)
   - The Crimson framework is composed of seven client components:
     - **Thin Client**: It is usually dropped during the infection process by which Transparent Tribe is distributed.
         - It contains a limited number of features and can typically be used to:

@@ -170,11 +170,8 @@ The main features are accessible from the “bot panel”, an interface with twe
           1. It checks if the malware directory exists as specified in an embedded configuration and then copies the malware executable inside it. \
           2. It also creates a registry key under “`HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`” to execute the worm automatically. 
 
-    - **USB Worm distribution**:
-          - 
-        
-
-
+        13. **USB Worm distribution**:
+            - link: https://securelist.com/transparent-tribe-part-1/98127/ (search: "USB Worm distribution")
 
     - **Pass Logger**: A credential stealer, used for stealing credentials stored in the Chrome, Firefox and Opera browsers.
     - **KeyLogger**: this is simple malware used for recording keystrokes.

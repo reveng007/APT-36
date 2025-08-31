@@ -44,11 +44,12 @@ More Softwares that are used by APT36 can be found [here - MITRE attack groups](
     1. Samples dating back to 2012. Begins with embassy phishing and the fake Indian‐news blog (`intribune[.]blogspot[.]com`). Tools include Crimson plus _Luminosity Link RAT_, _njRAT_, _Bezigate_, _Meterpreter_, and a closely related _Python/Peppy RAT_; _Andromeda_ downloaders also appear.
     2. Infra patterns: Mix of compromised and actor-owned domains (e.g., `sahirlodhi[.]com` and `bbmsync2727[.]com`). Naming tells: “sync” strings, repeated use of “bb/bbm,” and second-level domains ending in 4 digits. Heavy use of Contabo GmbH hosted C2.
     3. Another Email Campaign using "2016 [Pathankot attack](https://en.wikipedia.org/wiki/2016_Pathankot_attack)" Lure ([link](https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf)) (search: "`Email Campaign using "2016 Pathankot attack" Lure`")
-    - <img width="1459" height="650" alt="image" src="https://github.com/user-attachments/assets/ba9031a8-ad2c-43e8-a34f-c678ec598e21" />
-    - <img width="1421" height="235" alt="image" src="https://github.com/user-attachments/assets/fa9e9365-0a2d-418c-9c52-ba8a3f3e1b27" />
-    - <img width="1526" height="1160" alt="image" src="https://github.com/user-attachments/assets/839af7d4-86f3-47e6-afd1-f590587d55f9" />
-    - <img width="859" height="153" alt="image" src="https://github.com/user-attachments/assets/5374726e-7b1f-41f3-8e83-da14d72032ef" />
-    - <img width="1319" height="1219" alt="image" src="https://github.com/user-attachments/assets/4cf4cbf5-c974-4eca-8e34-e10d98d623e7" />
+    - ![image](images/10.png)
+    - ![image](images/11.png)
+    - ![image](images/12.png)
+    - ![image](images/13.png)
+    - ![image](images/14.png)
+
     1. **ATTACHMENT.BIZ domain**
       - fileshare.attachment[.]biz
       - comdtoscc.attachment[.]biz

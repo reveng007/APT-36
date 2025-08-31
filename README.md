@@ -218,16 +218,20 @@ The main features are accessible from the “bot panel”, an interface with twe
 5. By combining localized spear-phishing lures with advanced obfuscation techniques, the adversaries increase their chances of bypassing defenses and gaining footholds in sensitive networks.
 6. The malicious `.desktop` file is crafted to appear harmless by masquerading as a legitimate document. On the victim’s desktop, it displays an icon resembling a PDF file (image below), luring the user into executing it.
     - <img width="246" height="203" alt="image" src="https://github.com/user-attachments/assets/4b4860e6-a930-4abd-b766-b995d157aa81" />
+    - ![image](images/40.png)
     - Upon launch, the file opens a benign-looking decoy PDF (image below) to reinforce the illusion of legitimacy.
 7. While the user is focused on the opened document, a background process silently runs the obfuscated routines that initiate the deployment chain, ultimately installing the MeshAgent payload. This approach blends social engineering with stealth, hiding malicious activity behind what appears to be a harmless file.
     - <img width="1280" height="821" alt="image" src="https://github.com/user-attachments/assets/328a5393-0a58-4d85-b08b-ff96d00fde20" />
+    - ![image](images/41.png)
 8. By using a `.desktop` file, the attacker can place executable files on the victim’s system without needing elevated privileges (chmod).
 9. Infection Chain Overview:
     - The following schema outlines the infection process from the initial .desktop file launch to the final MeshAgent deployment.
        - <img width="1283" height="1060" alt="image" src="https://github.com/user-attachments/assets/46d4c094-4876-4ed7-aa70-447e298e6529" />
+       - ![image](images/42.png)
 10. Process Analysis:
     - The original desktop file downloads the `decoy document`, a `corrupted decryptor`, and an `encrypted downloader`.
         - <img width="2146" height="233" alt="image" src="https://github.com/user-attachments/assets/8098dcfe-a5fd-4b9d-8e6e-b4aee3a87146" />
+        - ![image](images/43.png)
         - 1. Filename: `Note_Warfare_Ops_Sindoor.pdf.desktop` : Initial phishing payload
         - 2. Filename: `/tmp/Note_Warfare.pdf` : Decoy PDF Document
         - 3. Filename: `mayuw` : AES decryptor 
@@ -239,6 +243,7 @@ The main features are accessible from the “bot panel”, an interface with twe
     ```
     - This decryptor is responsible for AES decryption and execution of the payload. There is also an option to use DES instead of AES:
         - <img width="534" height="792" alt="image" src="https://github.com/user-attachments/assets/877a1636-b514-45b5-8891-59b13557e352" />
+        - ![image](images/44.png)
     - The decryption process is straightforward and can be achieved with the following command line:
     ```
     ./mayuw -f shjdfhd -d 'NIC0fficialDB_Auth' && rm -r mayuw && ./shjdfhd
@@ -265,6 +270,7 @@ The main features are accessible from the “bot panel”, an interface with twe
 
     - All strings are obfuscated using a combination of Base64 encoding and DES-CBC encryption:
         - <img width="806" height="302" alt="image" src="https://github.com/user-attachments/assets/4dce7b8a-0952-4f81-ac24-a72f0329ea5c" />
+        - ![image](images/45.png)
     - The process repeats with another download and decryption stage, this time using the password `WOrkiNgtoDesksSS8123`:
         1. Filename: `access` : AES decryptor
         2. Filename: `inter_ddns` : Stage3 downloader \

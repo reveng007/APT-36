@@ -389,6 +389,13 @@ Other Resources:
 1. https://securelist.com/transparent-tribe-part-2/98233/
 2. https://attack.mitre.org/groups/G0134/
 3. https://blog.talosintelligence.com/transparent-tribe-infra-and-targeting/
+4. https://www.seqrite.com/blog/umbrella-of-pakistani-threats-converging-tactics-of-cyber-operations-targeting-india/
+5. https://www.seqrite.com/blog/pakistani-apts-escalate-attacks-on-indian-gov-seqrite-labs-unveils-threats-and-connections/
+6. https://www.cloudsek.com/blog/investigation-report-apt36-malware-campaign-using-desktop-entry-files-and-google-drive-payload-delivery
+7. https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/
+8. https://www.cyfirma.com/research/apt36-phishing-campaign-targets-indian-defense-using-credential-stealing-malware/
+9. https://www.team-cymru.com/post/transparent-tribe-apt-infrastructure-mapping-1
+10. https://www.team-cymru.com/post/transparent-tribe-apt-infrastructure-mapping
     
     
     

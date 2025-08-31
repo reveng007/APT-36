@@ -166,7 +166,6 @@ The main features are accessible from the “bot panel”, an interface with twe
         11. If the worm is executed from a _removable media_, the behavior is different.
             - In this case, it will check if the “Thin Client” or the “Main Client” is running on the system. If the system is not infected, it will connect to a remote Crimson Server and try to use a specific “USBW” command to download and execute the “Thin Client” component.
             - Snippet of code used to build USBW request:
-                - <img width="442" height="232" alt="image" src="https://github.com/user-attachments/assets/45345e6f-61b8-481f-af56-586b1dc0bc13" />
                 - ![image](images/31.png)
         12. **Persistence**: \
           1. It checks if the malware directory exists as specified in an embedded configuration and then copies the malware executable inside it. \
@@ -179,20 +178,15 @@ The main features are accessible from the “bot panel”, an interface with twe
     - **KeyLogger**: this is simple malware used for recording keystrokes.
     - **Remover**: Not much information regarding this.
         - Transparent Tribe tries to circumvent certain vendors’ security tools by configuring the Server to prevent installation of some of the malware components, specifically the “USB Driver” and the “Pass Logger”, on systems protected with ***Kaspersky products*** and prevent installation of the “Pass Logger” on systems protected by ***ESET***.
-        - <img width="883" height="214" alt="image" src="https://github.com/user-attachments/assets/d83f75aa-102f-4ece-9664-2fec86a03dc7" />
         - ![image](images/32.png)
     - **File Manager & Auto Download tabs**: The file manager allows the attacker to explore the remote file system, execute programs, download, upload and delete files.
-        - <img width="811" height="243" alt="image" src="https://github.com/user-attachments/assets/6f89ea7d-2a58-4d9b-b0f8-420b8bec2072" />
         - ![image](images/33.png)
         - The most interesting ones are “USB Drive” and “Delete USB”, used for accessing data stolen by the USB Driver and USB Worm components and the “Auto File Download” feature. This feature opens another window, which can also be accessed via the second last tab. It allows the attacker to configure the bot to search files, filter results and upload multiple files.
-        - <img width="392" height="417" alt="image" src="https://github.com/user-attachments/assets/e5522bce-cb96-4676-ba42-f29e4d18e89d" />
         - ![image](images/34.png)
     - **Screen and Webcam monitoring tabs**:
         - Screen monitoring tab: \
-            <img width="319" height="95" alt="image" src="https://github.com/user-attachments/assets/460f65e1-3ecf-423b-bb71-84a8acc92896" />
             ![image](images/35.png)
         - Webcam monitoring tab: \
-            <img width="354" height="99" alt="image" src="https://github.com/user-attachments/assets/05b5a38b-32a1-4ed5-82b6-356fecc0378f" />
             ![image](images/36.png)
         - The other tabs are used for managing the following features:
             - Audio surveillance: The malware uses the NAudio library to interact with the microphone and manage the audio stream. The library is stored server-side and pushed to the victim’s machine using a special command.
@@ -206,13 +200,13 @@ The main features are accessible from the “bot panel”, an interface with twe
 
 - The other version is quite similar to the previous one. Most noticeably, in this “B” version, the graphical user interface is different.
 - <img width="625" height="66" alt="image" src="https://github.com/user-attachments/assets/20fb5331-576c-49f6-88a9-62d8836c559a" />
-- ![image](images/36.png)
+- ![image](images/37.png)
 - “Update USB Worm” is missing from the Update Bot tab, which means that the USB Worm feature is not available in these versions.
 - <img width="1056" height="491" alt="image" src="https://github.com/user-attachments/assets/ee505f9e-d19f-4495-bff8-0eacfdd6b32b" />
-- ![image](images/37.png)
+- ![image](images/38.png)
 - This version does not include the check that prevents installation of certain components on systems protected with Kaspersky products, and the Command execution tab is missing. At the same position, we find a different tab, used for saving comments about the infected machine.
 - <img width="660" height="195" alt="image" src="https://github.com/user-attachments/assets/580bcc15-d7d0-4eb2-a424-6c807d4d73de" />
-- ![image](images/38.png)
+- ![image](images/39.png)
 
 
 ------------------------------------------------------------------------------------------------------------------

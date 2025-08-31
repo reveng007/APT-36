@@ -205,7 +205,7 @@ The main features are accessible from the “bot panel”, an interface with twe
 - <img width="660" height="195" alt="image" src="https://github.com/user-attachments/assets/580bcc15-d7d0-4eb2-a424-6c807d4d73de" />
 
 
-## APT Attributes about APT36 related to Sindoor Dropper: New Phishing Campaign
+## APT Attributes about APT36 related to Sindoor Dropper: New Phishing Campaign ([link - nextron](https://www.nextron-systems.com/2025/08/29/sindoor-dropper-new-phishing-campaign/))
 
 1. Nextron's analysis uncovered a phishing campaign targeting organizations in India, leveraging spear-phishing techniques reminiscent of Operation Sindoor.
 2. It is a Linux-focused infection method that relies on weaponized **.desktop** files.
@@ -224,7 +224,64 @@ The main features are accessible from the “bot panel”, an interface with twe
 10. Process Analysis:
     - The original desktop file downloads the `decoy document`, a `corrupted decryptor`, and an `encrypted downloader`.
         - <img width="2146" height="233" alt="image" src="https://github.com/user-attachments/assets/8098dcfe-a5fd-4b9d-8e6e-b4aee3a87146" />
-    - 
+        - 1. Filename: `Note_Warfare_Ops_Sindoor.pdf.desktop` : Initial phishing payload
+        - 2. Filename: `/tmp/Note_Warfare.pdf` : Decoy PDF Document
+        - 3. Filename: `mayuw` : AES decryptor 
+        - 4. Filename: `shjdfhd` : AES-CTR encrypted Stage2 (Stage2 downloader)
+         
+    - The decryptor is a Go binary packed using UPX. To avoid detection, this binary has its ELF magic bytes stripped off to evade scanning by the Google Docs platform. The magic bytes are restored on the fly by the .desktop file to make it executable again:
+    ```
+    printf '\x7FELF' | dd of=mayuw bs=1 count=4 conv=notrunc
+    ```
+    - This decryptor is responsible for AES decryption and execution of the payload. There is also an option to use DES instead of AES:
+        - <img width="534" height="792" alt="image" src="https://github.com/user-attachments/assets/877a1636-b514-45b5-8891-59b13557e352" />
+    - The decryption process is straightforward and can be achieved with the following command line:
+    ```
+    ./mayuw -f shjdfhd -d 'NIC0fficialDB_Auth' && rm -r mayuw && ./shjdfhd
+    ```
+    - Once decrypted, the second-stage payload is a UPX-packed Go dropper that drops another decryptor along with another AES-encrypted payload (with the password `WOrkiNgtoDesksSS8123whyme?youseethis`).
+    - Dropper contains basic anti-VM tricks:
+        1. The process checks that every value in `/sys/class/dmi/id/board_name`, `/sys/class/dmi/id/bios_vendor`, `/sys/class/dmi/id/board_vendor`, `/sys/class/dmi/id/sys_vendor`, and `/sys/class/dmi/id/product_name` does not match any of the following values: `VBOX_QEMU`, `QEMU`, `KVM_XEN`, `XEN`.
+        2. The following MAC address prefixes are blacklisted:
+            - 00:05:69
+            - 00:0c:29
+            - 00:1c:14
+            - 00:50:56
+            - 08:00:27
+            - 00:15
+        3. It attempts to execute the following processes to check if it is inside a VM:
+            - vboxservice
+            - vboxtray
+            - vmtoolsd
+            - vmwaretray
+            - xenservice
+         
+        3. The dropper checks that `/etc/os-release` does not contain any of the following values: `boss`, `vbox`, `qemu`, `KVM_`, `XEN_`.
+        4. The machine’s uptime must be over 10 minutes to continue execution.
+
+    - All strings are obfuscated using a combination of Base64 encoding and DES-CBC encryption:
+        - <img width="806" height="302" alt="image" src="https://github.com/user-attachments/assets/4dce7b8a-0952-4f81-ac24-a72f0329ea5c" />
+    - The process repeats with another download and decryption stage, this time using the password `WOrkiNgtoDesksSS8123`:
+        1. Filename: `access` : AES decryptor
+        2. Filename: `inter_ddns` : Stage3 downloader \
+      The decryption process concludes with the deployment of the final payload, a **MeshAgent**.
+
+11. Mesh Agent:
+    - The final payload delivered by the Sindoor dropper is a MeshAgent binary, a legitimate remote administration tool that has been repurposed for malicious use.
+    - MeshAgent provides the attacker with full remote access to the compromised system, enabling a wide range of post-exploitation activities such as activity monitoring, lateral movement, data exfiltration, and persistent access.
+        - File name: `server2` : MeshAgent
+    - Once executed, the MeshAgent connects to its command and control (C2) server at:
+    ```
+    wss://boss-servers.gov.in.indianbosssystems.ddns[.]net:443/agent.ashx
+    ```
+    > All observed subdomains under `indianbosssystems.ddns[.]net` resolve to the IP address `54.144.107.42`.
+    - Acc. to analysis, this command-and-control (C2) infrastructure is hosted on an Amazon Web Services (AWS) EC2 instance.
+    - From `validin.com`, these subdomains were all registered on _2025-08-15_, suggesting a coordinated setup of the infrastructure immediately prior to the campaign’s activity.
+    - This connection allows the attacker to issue _commands_, _transfer files_, and _maintain persistence_ on the infected host.
+    - The use of a legitimate tool like `MeshAgent` complicates detection and response, as its functionality overlaps with legitimate remote administration.
+   
+
+
 
 
 
@@ -242,7 +299,8 @@ Resources:
 2. https://malpedia.caad.fkie.fraunhofer.de/actor/operation_c-major
 3. https://securelist.com/transparent-tribe-part-1/98127/
 4. https://github.com/BRANDEFENSE/IoC/blob/main/IoC-YARA-rules-apt36.txt
-5. 
+5. https://www.nextron-systems.com/2025/08/29/sindoor-dropper-new-phishing-campaign/
+6. 
 
 Other Resources:
 1. https://securelist.com/transparent-tribe-part-2/98233/

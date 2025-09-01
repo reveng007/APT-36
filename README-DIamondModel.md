@@ -59,7 +59,7 @@
   - sindoor[.]website - Domains of Deception
   - sindoor[.]live - Domains of Deception
   - VPS Traffic Origination: Russia, Germany, Indonesia, Singapore
-  - Payload Hosting via Comporomised domains (SideCopy) : revivelife.in (`151.106.97.183`), vparking.online (`151.106.97.183`) and smokeworld.in (`162.241.85.104`)
+  - SideCopy: Payload Hosting via Comporomised domains : revivelife.in (`151.106.97.183`), vparking.online (`151.106.97.183`) and smokeworld.in (`162.241.85.104`)
     - hxxps://revivelife[.]in/assets/js/other/new/
     - hxxps://revivelife[.]in/assets/js/other/new/jfhdsjfh34frjkfs23432.hta
     - hxxps://revivelife[.]in/assets/js/other/grant/
@@ -81,16 +81,16 @@
     - occoman[.]com - 162.241.85[.]104
     - sunfireglobal[.]in - 162.241.85[.]104
     - masterrealtors[.]in - 162.241.85[.]104
-    - juichangchi[.]online - Crimson Rat (obfuscated with Eziriz’s .NET Reactor (and obfuscators like ConfuserEx, Crypto Obfusator, and Eazfuscator) were also found which are named ‘ShareX’ and ‘Analytics Based Card.’) C2 callback domain and ports: 909, 67, 65, 121 
-      - Resolved to: 176.107.182[.]55
-      - Resolved to: 162.245.191[.]214
-      - Payload server: 155.94.209[.]4 and 162.255.119[.]207
+- juichangchi[.]online - Crimson Rat (obfuscated with Eziriz’s .NET Reactor (and obfuscators like ConfuserEx, Crypto Obfusator, and Eazfuscator) were also found which are named ‘ShareX’ and ‘Analytics Based Card.’) C2 callback domain and ports: 909, 67, 65, 121 
+    - Resolved to: 176.107.182[.]55 (AS47987	| Zemlyaniy Dmitro Leonidovich	(Organization) | Ukraine	| WIN-9YM6J4IRPC (Windows Server 2012 and 2022 versions))
+    - Resolved to: 162.245.191[.]214	| AS8100 (ASN - unique identifiers for networks on the internet that use the Border Gateway Protocol (BGP))	|	QuadraNet Inc	(Organization) | United States (Country)	Name - WIN-P9NRMH5G6M8 (Windows Server 2012 and 2022 versions)
+    - Payload server:
+      - (155.94.209[.]4	| AS207083 (ASN - unique identifiers for networks on the internet that use the Border Gateway Protocol (BGP))	| Quadranet Inc	(Organization) | Netherlands (Country)	Name - WIN-P9NRMH5G6M8 (Windows Server 2012 and 2022 versions))
+      - 162.255.119[.]207
+      - 176.107.182[.]55	| AS47987	| Zemlyaniy Dmitro Leonidovich	| Ukraine	| WIN-9YM6J4IRPC (Windows Server 2012 and 2022 versions)
 
   - AllaKore RAT are registered in Germany to AS51167 – Contabo GmbH
     - C2 Server ip: 164.68.102.44/ vmi1701584.contaboserver.net (port: 6663, 9828), 213.136.94.11/ vmi1761221.contaboserver.net (port: 6663, 7880)
-    - 
-  - 
-  - 
 
 3. Capability
   - RAT (Remote Access Trojan)
@@ -132,8 +132,8 @@
   - Obfuscated loader : Txt.Enc.Sidecopy.49538.GC (Signature Name)
   - 15DA10765B7BECFCCA3325A91D90DB37 – Special Benefits.docx
   - Its arsenal includes Ares RAT, Action RAT, AllaKore RAT, Reverse RAT, Margulas RAT and more, shares code similarity (with Transparent Tribe (APT36)) and constantly updates its Linux malware arsenal.
-  - Custom variants of an open-source remote agent, [AllaKore RAT](https://github.com/maickonn/AllaKore_Remote) (.NET) - e291fffbcb4b873b76566d5345094567	- Mailbird.exe
-  - HTA files used:
+  - Custom variants of an open-source remote agent, [AllaKore RAT](https://github.com/maickonn/AllaKore_Remote) (.NET) - e291fffbcb4b873b76566d5345094567	- Mailbird.exe (e291fffbcb4b873b76566d5345094567)
+  - HTA files used (SideCopy):
     - 6cdc79655e9866e31f6c901d0a05401d	jfhdsjfh34frjkfs23432.hta
     - dbf196ccb2fe4b6fb01f93a603056e55	flutter.hta
     - 37b10e4ac08534ec36a59be0009a63b4	plugins.hta
@@ -144,7 +144,7 @@
     - da529e7b6056a055e3bbbace20740ee9	min-js.hta
     - cadafc6a91fc4bba33230baed9a8a338	nodejsmin.hta
   
-  - Embedded DLL files used:
+  - Embedded DLL files used (SideCopy):
     - 1e5285ee087c0d73c76fd5b0b7bc787c	hta.dll
     - f74c59fd5b835bf7630fbf885d6a21aa	hta.dll
     - 3cc6602a1f8a65b5c5e855df711edeb0	hta.dll
@@ -154,24 +154,59 @@
     - eceb986d166526499f8f37fd3efd44db	SummitOfBion.dll
     - 2a680cf1e54f1a1f585496e14d34c7e9	SummitOfBion.dll
   
-  - Dll files used:
-    - AllaKore RAT
-76ca50a71e014aa2d089fed1251bf6cd	issas.exe
-71b285c8903bb38d16d97c1042cbeb92	quick.exe
-9684bf8955b348540446df6b78813cdb	cove.exe
-48e1e695258a23742cd27586e262c55a	salso.exe
-4ba7ca56d1a6082f0303f2041b0c1a45	cove.exe
-6cda3b5940a2a97c5e71efcd1dd1d2ca	FI_Ejec1.exe
+  - Dll files used/dropped (SideCopy):
+    - abeaa649bd3d8b9e04a3678b86d13b6b	msdr.dll
+    - b3a5e819e3cf9834a6b33c606fc50289	braveservice.dll
+    - 312923e0baf9796a846e5aad0a4d0fb6	salso.dll
+    - 1d7fc8a9241de652e481776e99aa3d46	salso.dll
+    - 760ff1f0496e78d37c77b2dc38bcbbe4	salso.dll
+    - fa5a94f04e684d30ebdc4bf829d9c604	FI_Ejec13234.dll
 
-  - Additionally, two new samples that were obfuscated with Eziriz’s .NET Reactor were also found which are named ‘ShareX’ and ‘Analytics Based Card.’
+  - AllaKore RAT (SideCopy):
+    - 76ca50a71e014aa2d089fed1251bf6cd	issas.exe
+    - 71b285c8903bb38d16d97c1042cbeb92	quick.exe
+    - 9684bf8955b348540446df6b78813cdb	cove.exe
+    - 48e1e695258a23742cd27586e262c55a	salso.exe
+    - 4ba7ca56d1a6082f0303f2041b0c1a45	cove.exe
+    - 6cda3b5940a2a97c5e71efcd1dd1d2ca	FI_Ejec1.exe
+
+  - Additionally, two new samples that were obfuscated with Eziriz’s .NET Reactor were also found which are named ‘ShareX’ and ‘Analytics Based Card.’ (`bb5b569b38affb12dfe2ea6d5925e501` and `7cdc81a0f5c5b2d341de040a92fdd23a` repectively)
   - APT36 has used different packers and obfuscators like ConfuserEx, Crypto Obfusator, and Eazfuscator, in the past.
 
+  - File location on host:
+    - SideCopy:
+      - C:\ProgramData\HP\flutter.hta
+      - C:\ProgramData\HP\plugins.hta
+      - C:\ProgramData\HP\min-js.hta
+      - C:\ProgramData\HP\nodejsmin.hta.hta
+      - C:\Users\Public\quick\quick.exe
+      - C:\Users\Public\quick\msdr.dll
+      - C:\Users\Public\quick\quick.bat
+      - C:\Users\Public\issas\issas.exe
+      - C:\Users\Public\issas\braveservice.dll
+      - C:\Users\Public\issas\issas.bat
+      - C:\Users\Public\cove\cove.exe
+      - C:\Users\Public\cove\salso.dll
+      - C:\Users\Public\cove\cove.bat
+      - C:\Users\Public\salso\salso.exe
+      - C:\Users\Public\salso\salso.dll
+      - C:\Users\Public\salso\salso.bat
+      - C:\Users\Public\FI_Ejec1\FI_Ejec1.exe
+      - C:\Users\Public\FI_Ejec1\FI_Ejec1324.dll
+      - C:\Users\Public\FI_Ejec1\FI_Ejec1.bat
+    - APT36:
+      - Maldoc : f436aa95838a92b560f4cd1e1c321fe7	All details.xlam
+      - Decoy : 9d337c728c92bdb227055e4757952338 All details.xlam
+      - Maldoc : afb24ec01881b91c220fec8bb2f53291	Imp message from dgms.xlam
+      - Decoy : d7b909f611e8f9f454786f9c257f26eb Imp message from dgms.xlam
+      - 
 
 Gathering system information
 Enumerating files and folders
 Upload and execute files
 Keylogging
 Steal clipboard data
+Persistence is set in two ways, run registry key or through the startup directory.
 
 5. Victim
   - Indian Diplomatic and Indian military resources (Indian Embassies in Saudi Arabia and Kazakstan).
@@ -184,7 +219,6 @@ Steal clipboard data
   - Education (Schools, Universities, Boards)
   - State Govt Portals & Civic Infrastructure
   - Media & News Portals
-  - 
 
 
 
@@ -192,10 +226,14 @@ Steal clipboard data
 1. https://securelist.com/transparent-tribe-part-1/98127/
 2. https://github.com/BRANDEFENSE/IoC/blob/main/IoC-YARA-rules-apt36.txt
 3. https://www.quickheal.co.in/knowledge-centre/operation-sindoor-anatomy-of-a-digital-siege/
+4. 
 
 ## Other Resources:
 1. Android: https://securelist.com/transparent-tribe-part-2/98233/
 2. https://www.seqrite.com/blog/umbrella-of-pakistani-threats-converging-tactics-of-cyber-operations-targeting-india/
-3. 
+3. https://blog.talosintelligence.com/transparent-tribe-infra-and-targeting/
+4. https://www.team-cymru.com/post/transparent-tribe-apt-infrastructure-mapping-1
+5. https://www.team-cymru.com/post/transparent-tribe-apt-infrastructure-mapping
+
 
 

@@ -1,4 +1,4 @@
-<img width="421" height="1302" alt="image" src="https://github.com/user-attachments/assets/ef655045-f960-45cf-b921-9456ef8674a7" />## Attributes based on Diamond Model
+## Attributes based on Diamond Model
 
 ### pdf: https://apps.dtic.mil/sti/pdfs/ADA586960.pdf
 

@@ -13,7 +13,6 @@
   -  A strong correlation between these groups along with **RusticWeb**
   -  Child APT Group of APT36 - SideCopy
   -  SideCopy is a Pakistan-linked Advanced Persistent Threat group that has been targeting South Asian countries, primarily the Indian defense and government entities, since at least 2019.
-  -  
 
 
 2. Infrastructure
@@ -91,6 +90,9 @@
 
   - AllaKore RAT are registered in Germany to AS51167 – Contabo GmbH
     - C2 Server ip: 164.68.102.44/ vmi1701584.contaboserver.net (port: 6663, 9828), 213.136.94.11/ vmi1761221.contaboserver.net (port: 6663, 7880)
+   
+  - simple virtual private server (VPS) for C2 Comm - ElizaRAT infections
+  - Google Drive for C2 Comm - ElizaRAT infections
 
 3. Capability
   - RAT (Remote Access Trojan)
@@ -199,14 +201,59 @@
       - Decoy : 9d337c728c92bdb227055e4757952338 All details.xlam
       - Maldoc : afb24ec01881b91c220fec8bb2f53291	Imp message from dgms.xlam
       - Decoy : d7b909f611e8f9f454786f9c257f26eb Imp message from dgms.xlam
-      - 
+      
+    - MITRE tactiques:
+      - Resource Development - T1583.001 - Acquire Infrastructure: Domains
+                             - T1584.001 - Compromise Infrastructure: Domains
+                             - T1587.001 - Develop Capabilities: Malware
+                             - T1588.001 - Obtain Capabilities: Malware
+                             - T1588.002 - Obtain Capabilities: Tool
+                             - T1608.001 - Stage Capabilities: Upload Malware
+                             - T1608.005 - Stage Capabilities: Link Target
 
-Gathering system information
-Enumerating files and folders
-Upload and execute files
-Keylogging
-Steal clipboard data
-Persistence is set in two ways, run registry key or through the startup directory.
+      - Initial Access - T1566.001 - Phishing: Spear phishing Attachment
+                       - T1566.002 - Phishing: Spear phishing Link
+
+      - Execution - T1106 - Native API
+                  - T1129 - Shared Modules (usage of malicious dlls being loaded via file execution and via [Costura](https://github.com/Fody/Costura) to embed .NET and assembly modules (ElizaRAT). [checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/))
+                  - T1059 - Command and Scripting Interpreter
+                  - T1047 - Windows Management Instrumentation (WMI)
+                  - T1204.001 - User Execution: Malicious Link
+                  - T1204.002 - User Execution: Malicious File
+
+      - Persistence - T1547.001	- Registry Run Keys / Startup Folder ([]())
+                    - T1053.005 - Scheduled Task ([checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/) - All the Rat present above + ElizaRAT)
+      
+      - Defense Evasion	- T1027.010 - Command Obfuscation
+                        - T1036.005 - Masquerading: Match Legitimate Name or Location
+                        - T1036.007 - Masquerading: Double File Extension 
+                        - T1140  - Deobfuscate/Decode Files or Information
+                        - T1218.005 - System Binary Proxy Execution: Mshta
+                        - T1574.002 - Hijack Execution Flow: DLL Side-Loading (Abusing Slack, rundll32.exe : [checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/) - All the Rat present above + ElizaRAT)
+                        - T1027.009 - Obfuscated Files or Information: Embedded Payloads
+                        - T1027.010 - Obfuscated Files or Information: Command Obfuscation
+      
+      - Discovery	- T1012 - Query Registry
+                  - T1033 - System Owner/User Discovery
+                  - T1057 - Process Discovery
+                  - T1083 - File and Directory Discovery
+                  - T1518.001 - Software Discovery: Security Software Discovery
+
+      - Collection - T1005 - Data from Local System
+                   - T1056.001 - Input Capture: Keylogging
+                   - T1074.001 - Data Staged: Local Data Staging
+                   - T1119 - Automated Collection
+                   - T1113 - Screen Capture
+                   - T1125 - Video Capture
+
+      - C2 - T1105 - Ingress Tool Transfer
+           - T1571 - Non-Standard Port
+           - T1573 - Encrypted Channel
+           - T1071.001 - Application Layer Protocol: Web Protocols
+
+      - Exfiltration - T1041 - Exfiltration Over C2 Channel
+     
+      - ElizaRAT IOCs: https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/
 
 5. Victim
   - Indian Diplomatic and Indian military resources (Indian Embassies in Saudi Arabia and Kazakstan).
@@ -226,7 +273,11 @@ Persistence is set in two ways, run registry key or through the startup director
 1. https://securelist.com/transparent-tribe-part-1/98127/
 2. https://github.com/BRANDEFENSE/IoC/blob/main/IoC-YARA-rules-apt36.txt
 3. https://www.quickheal.co.in/knowledge-centre/operation-sindoor-anatomy-of-a-digital-siege/
-4. 
+4. https://www.seqrite.com/blog/pakistani-apts-escalate-attacks-on-indian-gov-seqrite-labs-unveils-threats-and-connections/
+5. https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/
+
+https://www.cloudsek.com/blog/investigation-report-apt36-malware-campaign-using-desktop-entry-files-and-google-drive-payload-delivery
+https://www.cyfirma.com/research/apt36-phishing-campaign-targets-indian-defense-using-credential-stealing-malware/
 
 ## Other Resources:
 1. Android: https://securelist.com/transparent-tribe-part-2/98233/
@@ -234,6 +285,8 @@ Persistence is set in two ways, run registry key or through the startup director
 3. https://blog.talosintelligence.com/transparent-tribe-infra-and-targeting/
 4. https://www.team-cymru.com/post/transparent-tribe-apt-infrastructure-mapping-1
 5. https://www.team-cymru.com/post/transparent-tribe-apt-infrastructure-mapping
+6. https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf
+
 
 
 

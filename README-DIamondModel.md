@@ -203,52 +203,52 @@
       - Decoy : d7b909f611e8f9f454786f9c257f26eb Imp message from dgms.xlam
       
     - MITRE tactiques:
-      - Resource Development - T1583.001 - Acquire Infrastructure: Domains
-                             - T1584.001 - Compromise Infrastructure: Domains
-                             - T1587.001 - Develop Capabilities: Malware
-                             - T1588.001 - Obtain Capabilities: Malware
-                             - T1588.002 - Obtain Capabilities: Tool
-                             - T1608.001 - Stage Capabilities: Upload Malware
-                             - T1608.005 - Stage Capabilities: Link Target
+      - Resource Development - T1583.001 - Acquire Infrastructure: Domains \
+                             - T1584.001 - Compromise Infrastructure: Domains \
+                             - T1587.001 - Develop Capabilities: Malware \
+                             - T1588.001 - Obtain Capabilities: Malware \
+                             - T1588.002 - Obtain Capabilities: Tool \
+                             - T1608.001 - Stage Capabilities: Upload Malware \
+                             - T1608.005 - Stage Capabilities: Link Target 
 
-      - Initial Access - T1566.001 - Phishing: Spear phishing Attachment
-                       - T1566.002 - Phishing: Spear phishing Link
+      - Initial Access - T1566.001 - Phishing: Spear phishing Attachment \
+                       - T1566.002 - Phishing: Spear phishing Link 
 
-      - Execution - T1106 - Native API
-                  - T1129 - Shared Modules (usage of malicious dlls being loaded via file execution and via [Costura](https://github.com/Fody/Costura) to embed .NET and assembly modules (ElizaRAT). [checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/))
-                  - T1059 - Command and Scripting Interpreter
-                  - T1047 - Windows Management Instrumentation (WMI)
-                  - T1204.001 - User Execution: Malicious Link
-                  - T1204.002 - User Execution: Malicious File
+      - Execution - T1106 - Native API (SideCopy) \
+                  - T1129 - Shared Modules (usage of malicious dlls being loaded via file execution and via [Costura](https://github.com/Fody/Costura) to embed .NET and assembly modules (ElizaRAT).[checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/)) \
+                  - T1059 - Command and Scripting Interpreter \
+                  - T1047 - Windows Management Instrumentation (WMI) \
+                  - T1204.001 - User Execution: Malicious Link \
+                  - T1204.002 - User Execution: Malicious File 
 
-      - Persistence - T1547.001	- Registry Run Keys / Startup Folder ([]())
+      - Persistence - T1547.001	- Registry Run Keys / Startup Folder ([MITRE](https://attack.mitre.org/techniques/T1547/001/)) \
                     - T1053.005 - Scheduled Task ([checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/) - All the Rat present above + ElizaRAT)
       
-      - Defense Evasion	- T1027.010 - Command Obfuscation
-                        - T1036.005 - Masquerading: Match Legitimate Name or Location
-                        - T1036.007 - Masquerading: Double File Extension 
-                        - T1140  - Deobfuscate/Decode Files or Information
-                        - T1218.005 - System Binary Proxy Execution: Mshta
-                        - T1574.002 - Hijack Execution Flow: DLL Side-Loading (Abusing Slack, rundll32.exe : [checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/) - All the Rat present above + ElizaRAT)
-                        - T1027.009 - Obfuscated Files or Information: Embedded Payloads
+      - Defense Evasion	- T1027.010 - Command Obfuscation \
+                        - T1036.005 - Masquerading: Match Legitimate Name or Location \
+                        - T1036.007 - Masquerading: Double File Extension \
+                        - T1140  - Deobfuscate/Decode Files or Information \
+                        - T1218.005 - System Binary Proxy Execution: Mshta \
+                        - T1574.002 - Hijack Execution Flow: DLL Side-Loading (Abusing Slack, rundll32.exe : [checkpoint](https://research.checkpoint.com/2024/the-evolution-of-transparent-tribes-new-malware/) - All the Rat present above + ElizaRAT) \
+                        - T1027.009 - Obfuscated Files or Information: Embedded Payloads \
                         - T1027.010 - Obfuscated Files or Information: Command Obfuscation
       
-      - Discovery	- T1012 - Query Registry
-                  - T1033 - System Owner/User Discovery
-                  - T1057 - Process Discovery
-                  - T1083 - File and Directory Discovery
+      - Discovery	- T1012 - Query Registry \
+                  - T1033 - System Owner/User Discovery \
+                  - T1057 - Process Discovery \
+                  - T1083 - File and Directory Discovery \
                   - T1518.001 - Software Discovery: Security Software Discovery
 
-      - Collection - T1005 - Data from Local System
-                   - T1056.001 - Input Capture: Keylogging
-                   - T1074.001 - Data Staged: Local Data Staging
-                   - T1119 - Automated Collection
-                   - T1113 - Screen Capture
+      - Collection - T1005 - Data from Local System \
+                   - T1056.001 - Input Capture: Keylogging \
+                   - T1074.001 - Data Staged: Local Data Staging \
+                   - T1119 - Automated Collection \
+                   - T1113 - Screen Capture \
                    - T1125 - Video Capture
 
-      - C2 - T1105 - Ingress Tool Transfer
-           - T1571 - Non-Standard Port
-           - T1573 - Encrypted Channel
+      - C2 - T1105 - Ingress Tool Transfer \
+           - T1571 - Non-Standard Port \
+           - T1573 - Encrypted Channel \
            - T1071.001 - Application Layer Protocol: Web Protocols
 
       - Exfiltration - T1041 - Exfiltration Over C2 Channel
